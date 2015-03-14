@@ -71,6 +71,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 1
+  chargeDuration: 2
+  jumpDistance: 1
+  jumpSpeed: 3
 --- !u!212 &21238820
 SpriteRenderer:
   m_ObjectHideFlags: 1
