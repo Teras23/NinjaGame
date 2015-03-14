@@ -5,17 +5,18 @@ public class Movement : MonoBehaviour {
 
     public float moveSpeed = 1;
     public float noMove = 0.5f;
+
+    //Jumping
     public float jumpDistance = 2.5f;
     public float jumpSpeed = 5;
-    public float hitDistance = 0.2f;
     private bool jumping;
-    private Vector2 jumpPosition;
     private float jumpTime;
+    private Vector2 jumpPosition;
 
     private Vector2 position;
     private Vector2 mousePosition;
     private Rigidbody2D playerRigidbody;
-	
+
 	void Update () {
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

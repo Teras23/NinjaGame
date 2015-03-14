@@ -13,8 +13,24 @@ GameObject:
   - 50: {fileID: 5079244}
   - 114: {fileID: 11431462}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Normal Enemy
   m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &118584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 459376}
+  - 61: {fileID: 6120608}
+  m_Layer: 8
+  m_Name: Wall Collider
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,10 +42,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.72562289, y: 8.40305805, z: 0}
+  m_LocalPosition: {x: 7.11999989, y: 7.98000002, z: 0}
   m_LocalScale: {x: .25, y: .5, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 459376}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &459376
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422222}
   m_RootOrder: 0
 --- !u!50 &5079244
 Rigidbody2D:
@@ -41,11 +70,24 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 1
+  m_FixedAngle: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
+--- !u!61 &6120608
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118584}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.25}
 --- !u!61 &6189902
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -71,9 +113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hits: 1
-  chargeDuration: 2
-  jumpDistance: 1
+  moveSpeed: 1
+  jumpDistance: 3
   jumpSpeed: 3
+  chargeDistance: 2
+  chargeDuration: 2
 --- !u!212 &21238820
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,19 +4,28 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 
     public int hits;
-    public float chargeDuration;
-    private float chargeTime;
-    private bool charging = false;
-    private bool jumping;
-    private Vector2 jumpPosition;
-    private float jumpTime;
-    public float chargeDistance;
-    public float jumpDistance;
-    public float jumpSpeed;
     public float moveSpeed;
+
+    //Jumping
+    public float jumpDistance; //The distance of the jump
+    public float jumpSpeed; //The speed of the jump
+    private bool jumping;
+    private float jumpTime; //Time of jump start
+    private Vector2 jumpPosition; //Position to jump to
+   
+    //Charging
+    public float chargeDistance; //The min distance between player and enemy for enemy to start charging
+    public float chargeDuration; //The amount of time the enemy has to charge
+    private float chargeTime; //Time of charge start
+    private bool charging;
 
     private Vector2 playerPosition;
     private Vector2 position;
+
+    void Start() {
+        charging = false;
+        jumping = false;
+    }
 
 	void FixedUpdate () {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
